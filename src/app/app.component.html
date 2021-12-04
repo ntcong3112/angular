@@ -1,0 +1,23 @@
+<div class="main">
+  <app-head></app-head>
+
+  <div class="cart">
+    <app-item
+      [products]="products"
+      [numberItem]="numberItem"
+      (onRemove)="removeProduct($event)"
+      (onChange)="updateQuantity($event)"
+    ></app-item>
+
+    <div>
+      <app-total
+        [products]="products"
+        [total]="total.toFixed(2)"
+        [totalDiscount]="totalDiscount.toFixed(2)"
+      >
+      </app-total>
+
+      <app-discount (onChangeDiscount)="updateDiscount($event)"></app-discount>
+    </div>
+  </div>
+</div>
